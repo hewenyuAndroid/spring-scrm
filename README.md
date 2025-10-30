@@ -69,4 +69,57 @@ npm install axios -g
 
 `npm` 是 `Node Package Manager` 的缩写，是 `Node.js` 的一个包管理工具。`create` 是一个 `npm` 命令，用于创建一个新的 `npm` 包。`vite` 是一个基于 `Vue.js` 的静态网站生成器, `@latest` 表示使用最新版本的 `vite`
 
+![首次使用需要安装](./files/imgs/npm_create_vite_first_install.png)
+
+### `Vue` 项目目录结构说明
+
+```text
+scrm-front/
+├── .vscode/                 # VS Code编辑器配置文件目录
+├── node_modules/            # 项目依赖包目录（npm安装的所有依赖）
+├── public/                  # 静态资源目录（不经过构建处理）
+│   └── vite.svg            # Vite框架的Logo图标
+├── src/                     # 项目源代码目录
+│   ├── assets/             # 静态资源目录（经过构建处理）
+│   ├── components/         # Vue组件目录
+│   ├── App.vue             # Vue应用根组件
+│   ├── main.js             # 应用入口文件
+│   └── style.css           # 全局样式文件
+├── .gitignore              # Git版本控制忽略文件配置
+├── index.html              # 项目主HTML文件
+├── package.json            # 项目配置和依赖管理文件
+├── package-lock.json       # 依赖版本锁定文件
+├── README.md               # 项目说明文档
+└── vite.config.js          # Vite构建工具配置文件
+```
+
+### `Vue` 项目启动
+
+在 `vite.config.js` 文件下可以配置项目的启动配置
+
+```text
+import {defineConfig} from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+// https://vite.dev/config/
+export default defineConfig({
+    plugins: [vue()],
+
+    server: {
+        host: '127.0.0.1',  // ip
+        port: 8081, // 端口
+        open: true  // 配置启动时是否自动打开浏览器
+    }
+})
+```
+
+进入 `scrm-front` 目录，执行 `npm run dev` 启动项目;
+
+### `Vue` 项目开发
+
+`.vue` 结尾的文件就是 `vue` 页面，也成为 `vue` 组件，`Vue` 组件一般由三个部分组成:
+
+- `<template>` 标签，里面写 `html` 页面要展示的内容;
+- `<script>` 标签，里面写 `javascript` 代码;
+- `<style>` 标签，里面写 `css` 样式;
 
