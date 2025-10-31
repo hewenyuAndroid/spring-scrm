@@ -123,3 +123,65 @@ export default defineConfig({
 - `<script>` 标签，里面写 `javascript` 代码;
 - `<style>` 标签，里面写 `css` 样式;
 
+
+### ·ElementPlus`
+
+饿了么团队开发并开源的 前端组件，适用于开发后台系统:
+
+- 基于 `Vue2.0` 的 `element-ui`: https://element.eleme.cn/
+- 基于 `Vue3.0` 的 `element-plus`: https://element-plus.gitee.io/
+
+安装 `element-plus`
+
+- `npm install element-plus --save`
+- `npm i element-plus --save`
+
+![`npm install element-plus --save`](./files/imgs/npm_install_element-plus_--save_command.png)
+
+`--save` 表示安装包信息会写入 `package.json` 的 `dependences` 中，此时项目打包就会依赖到该模块，如果项目打包时不需要依赖该模块，就需要使用 `--save-dev`，它会在 `devDependencies` 下，表示项目开发时需要依赖该模块，项目打包发布时不需要依赖该模块;
+
+```text
+// package.json
+{
+  "name": "scrm-front",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    // dependencies 节点下会增加 element-plus 的版本信息
+    "element-plus": "^2.11.5",
+    "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    // 如果是使用 npm install element-plus --save-dev 命令，则版本信息会被添加在此处
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.1.7"
+  }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
