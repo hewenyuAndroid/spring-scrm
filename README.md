@@ -129,7 +129,7 @@ export default defineConfig({
 饿了么团队开发并开源的 前端组件，适用于开发后台系统:
 
 - 基于 `Vue2.0` 的 `element-ui`: https://element.eleme.cn/
-- 基于 `Vue3.0` 的 `element-plus`: https://element-plus.gitee.io/
+- 基于 `Vue3.0` 的 `element-plus`: https://element-plus.org/zh-CN/
 
 安装 `element-plus`
 
