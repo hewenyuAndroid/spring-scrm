@@ -1,6 +1,6 @@
 import {createApp} from 'vue'
 // 导入 css 样式，不需要 from 子句
-import './style.css'
+// import './style.css'
 // 从 element-plus 框架导入 ElementPlus 组件
 import ElementPlus from 'element-plus'
 // 导入 element-plus 的 css 样式，不需要 from 子句
