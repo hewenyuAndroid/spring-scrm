@@ -15,13 +15,16 @@
 
       <div class="loginTitle">欢迎登陆</div>
 
-      <el-form :model="form" label-width="120px">
-        <el-form-item label="账号">
-          <el-input v-model="form.name"/>
+      <el-form :model="loginUser" label-width="120px" :rules="loginRules">
+        <!--
+          step2: 在需要校验字段的 el-form-item 上增加 prop 属性
+        -->
+        <el-form-item label="账号" prop="loginAcct">
+          <el-input v-model="loginUser.loginAcct"/>
         </el-form-item>
 
-        <el-form-item label="密码">
-          <el-input v-model="form.name"/>
+        <el-form-item label="密码" prop="loginPwd">
+          <el-input type="password" v-model="loginUser.loginPwd"/>
         </el-form-item>
 
         <el-form-item>
@@ -29,7 +32,7 @@
         </el-form-item>
 
         <el-form-item>
-          <el-button type="primary">登  录</el-button>
+          <el-button type="primary">登 录</el-button>
         </el-form-item>
 
       </el-form>
@@ -50,9 +53,26 @@ export default defineComponent({
   data() {
     return {
       // 对象变量的定义是一个 {}
-      form: {
+      loginUser: {
         // 字符串变量的定义是 ''
-        name: ''
+        loginAcct: '',
+        loginPwd: ''
+      },
+      // step1:定义登录表单的校验对象
+      loginRules: {
+        // step3: 定义字段的校验规则，规则可以是多个
+        loginAcct: [
+          // required: true 输入框不能为空
+          // message: '请输入账号' 输入框为空状态的提示语
+          // trigger: 'blur' 光标消失的时候触发校验
+          {required: true, message: '请输入账号', trigger: 'blur'},
+          // 最大，最小长度校验
+          // {min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur'},
+        ],
+        loginPwd: [
+          {required: true, message: '请输入密码', trigger: 'blur'},
+          {min: 6, max: 16, message: '登录密码长度为6-16位', trigger: 'blur'},
+        ]
       }
     }
   }
