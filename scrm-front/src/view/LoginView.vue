@@ -15,7 +15,7 @@
 
       <div class="loginTitle">欢迎登陆</div>
 
-      <el-form :model="loginUser" label-width="120px" :rules="loginRules">
+      <el-form ref="loginRefForm" :model="loginUser" label-width="120px" :rules="loginRules">
         <!--
           step2: 在需要校验字段的 el-form-item 上增加 prop 属性
         -->
@@ -32,7 +32,7 @@
         </el-form-item>
 
         <el-form-item>
-          <el-button type="primary">登 录</el-button>
+          <el-button type="primary" @click="doLogin">登 录</el-button>
         </el-form-item>
 
       </el-form>
@@ -43,6 +43,7 @@
 
 <script>
 import {defineComponent} from "vue"
+import {doPost} from "../http/httpRequest.js";
 
 // 导出当前组件
 export default defineComponent({
@@ -75,6 +76,29 @@ export default defineComponent({
         ]
       }
     }
+  },
+
+  // 函数定义位置
+  methods: {
+
+    // 登录
+    doLogin() {
+      // 校验参数
+      this.$refs.loginRefForm.validate((isValid) => {
+        // isValid 是验证表单参数校验后的结果，true 表示验证通过，false 表示验证未通过
+        if (isValid) {
+          let formData = new FormData();
+          formData.append("loginAcct", this.$data.loginUser.loginAcct)
+          formData.append("loginPwd", this.loginUser.loginPwd)
+
+          // then 里面使用 => 接收回调
+          doPost("/api/login", formData).then((resp) => {
+            console.log("登录结果: " + resp)
+          })
+        }
+      });
+    }
+
   }
 })
 </script>

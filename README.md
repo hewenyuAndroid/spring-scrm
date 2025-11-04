@@ -166,6 +166,17 @@ export default defineConfig({
 ```
 
 
+### 安装 `axios` 请求库
+
+官网: https://axios-http.com
+
+`vue` 中一般采用 `axios` 发送异步的 `ajax` 请求
+
+```text
+安装 axios
+npm install axios --save
+```
+
 
 
 
