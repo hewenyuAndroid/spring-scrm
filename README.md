@@ -4,6 +4,18 @@
 
 数据库表结构详见 [表结构](./files/dlyk.sql)，需要在数据库中先创建 `database` 然后再导入数据库文件 (可以使用导入命令 `source dlyk.sql`);
 
+## 问题记录
+
+> 项目clone到本地后，使用idea打开项目无法识别项目的问题
+
+1. 打开项目配置，配置 jdk;
+2. 打开项目配置，配置项目的module
+![配置module](./files/imgs/clone_proj_idea_load_failure_config_module.png)
+
+> 项目clone到本地后，vue 项目插件没有下载的问题
+
+![run npm install](./files/imgs/clone_proj_idea_npm_load.png)
+
 ## 前端环境
 
 `node.js`、`npm`、`vite` 三个工具
@@ -122,7 +134,6 @@ export default defineConfig({
 - `<template>` 标签，里面写 `html` 页面要展示的内容;
 - `<script>` 标签，里面写 `javascript` 代码;
 - `<style>` 标签，里面写 `css` 样式;
-
 
 ### ·ElementPlus`
 
