@@ -79,7 +79,7 @@ gradlew.bat
 
 # 应用配置
 **/application*.properties
-**/application*.yml
+#**/application*.yml
 **/application*.yaml
 **/banner.txt
 
