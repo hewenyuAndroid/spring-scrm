@@ -189,6 +189,28 @@ npm install axios --save
 ```
 
 
+## 后端项目配置
+
+### `Free MyBatisTool` 插件使用
+
+`mybatis plus` 插件为 `free mybatis tool` 可使用离线压缩包 [Free_MyBatis_Tools.zip](./files/plugin/Free_MyBatis_Tool.zip)
+
+插件下载地址: https://downloads.marketplace.jetbrains.com/files/18617/495942/Free_MyBatis_Tool.zip?updateId=495942&pluginId=18617&family=INTELLIJ&uuid=10072512570efe7-fa52-4afb-8bc9-7d65a1aa3704&updatedFrom=&code=IU&build=251.26094.121
+
+1. 选中需要创建的表，右键
+
+![右键选择创建](./files/imgs/free_mybatis_tool_step1_click_to_generate.png)
+
+2. 配置对应类创建的位置
+
+![配置目标类创建的位置](./files/imgs/free_mybatis_tool_step2_generate_class_template.png)
+
+
+
+
+
+
+
 
 
 
